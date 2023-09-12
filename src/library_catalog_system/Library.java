@@ -17,8 +17,15 @@ public class Library {
     public void availableBookList(){
         System.out.println("Books Available: ");
         for(Book book : books){
-            if (book.isCheckOut()){
+            if (!book.isCheckOut()){
                 System.out.println(book.getTitle());
+            }
+        }
+    }
+    public void getBookInfo(int id){
+        for(Book book : books){
+            if(book.getId() == id){
+                book.bookInfo(id);
             }
         }
     }

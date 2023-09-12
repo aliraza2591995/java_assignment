@@ -47,11 +47,11 @@ public class Book {
         this.title = title;
         this.author = author;
         this.publisher = publisher;
-        this.checkedOut = false;
+        this.checkOut = false;
     }
 
     //Methods
-    public void bookInfo() {
+    public void bookInfo(int id) {
         System.out.println("Book ID: " + id);
         System.out.println("Title: " + title);
         System.out.println("Author: " + author);
