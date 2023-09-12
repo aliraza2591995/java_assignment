@@ -52,25 +52,22 @@ public class Book {
 
     //Methods
     public void bookInfo(int id) {
-        System.out.println("Book ID: " + id);
-        System.out.println("Title: " + title);
-        System.out.println("Author: " + author);
-        System.out.println("Publisher: " + publisher);
+        System.out.println("Book ID: " + id + "\nTitle: " + title + " \nAuthor: " + author + "\nPublisher: " + publisher + "\n");
     }
-    public void checkout() {
+    public void checkedOut() {
         if (!checkOut) {
             checkOut = true;
-            System.out.println("You have successfully checked out the book: " + title);
+            System.out.println("Book checked out: " + title + "\n");
         } else {
-            System.out.println("Sorry, this book is already checked out.");
+            System.out.println("Sorry, this book is already checked out\n");
         }
     }
     public void returnBook() {
         if (checkOut) {
             checkOut = false;
-            System.out.println("Thank you for returning the book: " + title);
+            System.out.println("Thank you for returning the book: " + title + "\n");
         } else {
-            System.out.println("This book is not currently checked out.");
+            System.out.println("This book is not currently checked out\n");
         }
     }
 }
