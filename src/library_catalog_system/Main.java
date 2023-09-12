@@ -14,14 +14,6 @@ public class Main {
         System.out.println("\nWelcome to the library catalog system\nBelow is the list of books available in the library");
         library.availableBookList();
 
-//        System.out.println("Enter 1 for getting a list of books available");
-//        System.out.println("Enter 2 for getting a book info");
-//        System.out.println("Enter 3 for adding a book");
-//        System.out.println("Enter 4 for a book checkout");
-//        System.out.println("Enter 5 for returning a book");
-//        System.out.println("Press 0 to quit");
-//
-//        int options = sc.nextInt();
         int options;
 
         do{
