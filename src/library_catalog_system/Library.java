@@ -6,51 +6,85 @@ import java.util.List;
 public class Library {
 //    Fields
     private List<Book> books;
+    boolean idMatch = false;
+    boolean checkOutList = false;
+
 //    Constructor
     public Library(){
         this.books = new ArrayList<>();
     }
 //    Methods
     public void addBook(Book newBook){
-        books.add(newBook);
+            books.add(newBook);
+    }
+    public void idMatching(int id){
+        for (Book book : books){
+            if (id == book.getId()){
+                idMatch = true;
+                break;
+            }
+        }
+        if (idMatch){
+            System.out.println("Book with ID: " + id + " already exists!\n");
+        }
     }
     public void availableBookList(){
         System.out.println("Books Available: ");
         for(Book book : books){
             if (!book.isCheckOut()){
                 System.out.println("Book ID: " + book.getId() + ", Book Title: " + book.getTitle());
+                checkOutList = true;
             }
         }
         System.out.println("\n");
     }
     public void getBookInfo(int id){
+        boolean idFound = false;
         for(Book book : books){
             if(book.getId() == id){
                 book.bookInfo(id);
+                idFound = true;
             }
+        }
+        if (!idFound){
+            System.out.println("Book with ID: " + id + " not found!\n");
         }
     }
     public void checkOutBook(int id){
+        boolean idFound = false;
         for(Book book : books){
             if(book.getId() == id){
                 book.checkedOut();
+                idFound = true;
             }
+        }
+        if (!idFound){
+            System.out.println("Book with ID: " + id + " not found!\n");
         }
     }
     public void returnBook(int id){
+        boolean idFound = false;
         for(Book book : books){
             if(book.getId() == id){
                 book.returnBook();
+                idFound = true;
             }
+        }
+        if (!idFound){
+            System.out.println("Book with ID: " + id + " not found!\n");
         }
     }
     public void checkedOutBooksList(){
-        System.out.println("Books checked out: ");
-        for(Book book : books){
-           if (book.isCheckOut()){
-               System.out.println("Book ID: " + book.getId() + ", Book Title: " + book.getTitle());
-           }
+        if (!checkOutList) {
+            System.out.println("Books checked out: ");
+            for (Book book : books) {
+                if (book.isCheckOut()) {
+                    System.out.println("Book ID: " + book.getId() + ", Book Title: " + book.getTitle());
+                }
+            }
         }
-        System.out.println("\n");
+        else {
+            System.out.println("All books are available\n");
+        }
     }
 }

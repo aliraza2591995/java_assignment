@@ -14,35 +14,11 @@ public class Book {
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getTitle() {
         return title;
     }
-    public void setTitle(String title) {
-        this.title = title;
-    }
-    public String getAuthor() {
-        return author;
-    }
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-    public String getGenre() {
-        return genre;
-    }
-    public String getPublisher() {
-        return publisher;
-    }
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
     public boolean isCheckOut() {
         return checkOut;
-    }
-    public void setCheckOut(boolean checkOut) {
-        this.checkOut = checkOut;
     }
 
     //  Constructor
@@ -57,7 +33,13 @@ public class Book {
 
     //Methods
     public void bookInfo(int id) {
-        System.out.println("Book ID: " + id + "\nTitle: " + title + " \nAuthor: " + author + "\nGenre: " + genre + "\nPublisher: " + publisher + "\n");
+        System.out.println("Book ID: " + id + "\nTitle: " + title + " \nAuthor: " + author + "\nGenre: " + genre + "\nPublisher: " + publisher);
+        if (checkOut){
+            System.out.println("Availability status: Not available\n");
+        }
+        else {
+            System.out.println("Availability status: Available\n");
+        }
     }
     public void checkedOut() {
         if (!checkOut) {
