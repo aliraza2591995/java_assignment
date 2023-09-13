@@ -6,6 +6,7 @@ public class Book {
     private int id;
     private String title;
     private String author;
+    private String genre;
     private String publisher;
     private boolean checkOut;
 
@@ -28,6 +29,9 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+    public String getGenre() {
+        return genre;
+    }
     public String getPublisher() {
         return publisher;
     }
@@ -42,17 +46,18 @@ public class Book {
     }
 
     //  Constructor
-    public Book(int id, String title, String author, String publisher) {
+    public Book(int id, String title, String author, String genre, String publisher) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
+        this.genre = genre;
         this.checkOut = false;
     }
 
     //Methods
     public void bookInfo(int id) {
-        System.out.println("Book ID: " + id + "\nTitle: " + title + " \nAuthor: " + author + "\nPublisher: " + publisher + "\n");
+        System.out.println("Book ID: " + id + "\nTitle: " + title + " \nAuthor: " + author + "\nGenre: " + genre + "\nPublisher: " + publisher + "\n");
     }
     public void checkedOut() {
         if (!checkOut) {

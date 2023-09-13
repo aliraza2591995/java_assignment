@@ -44,4 +44,13 @@ public class Library {
             }
         }
     }
+    public void checkedOutBooksList(){
+        System.out.println("Books checked out: ");
+        for(Book book : books){
+           if (book.isCheckOut()){
+               System.out.println("Book ID: " + book.getId() + ", Book Title: " + book.getTitle());
+           }
+        }
+        System.out.println("\n");
+    }
 }
