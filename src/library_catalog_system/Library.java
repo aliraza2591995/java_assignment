@@ -19,7 +19,7 @@ public class Library {
     }
     public void idMatching(int id){
         for (Book book : books){
-            if (id == book.getId()){
+            if (book.getId() == id){
                 idMatch = true;
                 break;
             }

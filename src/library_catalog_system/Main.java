@@ -35,19 +35,38 @@ public class Main {
 
             try {
                 options = sc.nextInt();
+            } catch (InputMismatchException e){
+                System.out.println("Invalid Input!");
+            }
 
-                switch (options) {
-                    case 1 -> {
-                        library.availableBookList();
+            switch (options) {
+                case 1 -> {
+                    library.availableBookList();
+                }
+                case 2 -> {
+
+                    System.out.println("Enter the book ID you want to get information about");
+                    int bookId = 0;
+                    try{
+                        bookId = sc.nextInt();
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalid Input!");
+                        options = 0;
                     }
-                    case 2 -> {
-                        System.out.println("Enter the book ID you want to get information about");
-                        int bookId = sc.nextInt();
+                    if (options != 0){
                         library.getBookInfo(bookId);
                     }
-                    case 3 -> {
-                        System.out.println("Enter the book ID you want to add");
-                        int id = sc.nextInt();
+                }
+                case 3 -> {
+                    System.out.println("Enter the book ID you want to add");
+                    int id = 0;
+                    try{
+                        id = sc.nextInt();
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalid Input!");
+                        options = 0;
+                    }
+                    if (options !=0){
                         library.idMatching(id);
                         if (library.idMatch) {
                             break;
@@ -62,23 +81,39 @@ public class Main {
                         String genre = sc.next();
                         library.addBook(new Book(id, title, author, publisher, genre));
                     }
-                    case 4 -> {
-                        System.out.println("Enter book ID that you want to checkout");
-                        library.checkOutBook(sc.nextInt());
-                    }
-                    case 5 -> {
-                        System.out.println("Enter book ID that you want to return");
-                        library.returnBook(sc.nextInt());
-                    }
-                    case 6 -> {
-                        library.checkedOutBooksList();
-                    }
-                    case 0 -> {
-                    }
-                    default -> System.out.println("Invalid input\n");
                 }
-            } catch (InputMismatchException e){
-                System.out.println("Invalid Input");
+                case 4 -> {
+                    System.out.println("Enter book ID that you want to checkout");
+                    int id = 0;
+                    try{
+                        id = sc.nextInt();
+                    }catch (InputMismatchException e){
+                        System.out.println("Invalid Input!");
+                        options = 0;
+                    }
+                    if (options !=0){
+                        library.checkOutBook(id);
+                    }
+                }
+                case 5 -> {
+                    System.out.println("Enter book ID that you want to return");
+                    int id = 0;
+                    try {
+                        id = sc.nextInt();
+                    } catch (InputMismatchException e) {
+                        System.out.println("Invalid Input!");
+                        options = 0;
+                    }
+                    if (options != 0) {
+                        library.returnBook(id);
+                    }
+                }
+                case 6 -> {
+                    library.checkedOutBooksList();
+                }
+                case 0 -> {
+                }
+                default -> System.out.println("Invalid input!\n");
             }
         } while (options != 0);
     }
