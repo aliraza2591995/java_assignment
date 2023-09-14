@@ -33,7 +33,6 @@ public class Library {
         for(Book book : books){
             if (!book.isCheckOut()){
                 System.out.println("Book ID: " + book.getId() + ", Book Title: " + book.getTitle());
-                checkOutList = true;
             }
         }
         System.out.println("\n");
@@ -56,6 +55,7 @@ public class Library {
             if(book.getId() == id){
                 book.checkedOut();
                 idFound = true;
+                checkOutList = true;
             }
         }
         if (!idFound){
@@ -75,8 +75,8 @@ public class Library {
         }
     }
     public void checkedOutBooksList(){
-        if (!checkOutList) {
-            System.out.println("Books checked out: ");
+        if (checkOutList) {
+            System.out.println("Books checked out:");
             for (Book book : books) {
                 if (book.isCheckOut()) {
                     System.out.println("Book ID: " + book.getId() + ", Book Title: " + book.getTitle());
@@ -84,7 +84,8 @@ public class Library {
             }
         }
         else {
-            System.out.println("All books are available\n");
+            System.out.println("All books are available");
         }
+        System.out.println("\n");
     }
 }
