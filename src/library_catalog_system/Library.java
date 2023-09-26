@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Library {
 //    Fields
-    private List<Book> books;
+    private final List<Book> books;
     boolean idMatch = false;
     boolean checkOutList = false;
 

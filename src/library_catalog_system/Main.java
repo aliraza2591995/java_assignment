@@ -71,14 +71,15 @@ public class Main {
                         if (library.idMatch) {
                             break;
                         }
+                        Scanner nb = new Scanner(System.in);
                         System.out.println("Enter the book title");
-                        String title = sc.next();
+                        String title = nb.nextLine();
                         System.out.println("Enter the book author");
-                        String author = sc.next();
+                        String author = nb.nextLine();
                         System.out.println("Enter the book publisher");
-                        String publisher = sc.next();
+                        String publisher = nb.nextLine();
                         System.out.println("Enter the book genre");
-                        String genre = sc.next();
+                        String genre = nb.nextLine();
                         library.addBook(new Book(id, title, author, publisher, genre));
                     }
                 }
