@@ -16,6 +16,7 @@ public class Main {
         library.addBook(new Book(8, "Don't Make Me Think", "Steve Krug", "Web Design and Usability", "New Riders Press"));
         library.addBook(new Book(9, "Introduction to Algorithms", "Cormen, Thomas", "Tech, Computer Science", "MIT Press"));
         library.addBook(new Book(10, "The Alchemist", "Paulo Coelho", "Quest, adventure, fantasy", "HarperTorch"));
+        library.addBook(new Book(11, "The One Minute Manager", " Ken Blanchard", "	Business / Self-help / Motivational", "	William Morrow & Co"));
 
         Scanner sc = new Scanner(System.in);
 
